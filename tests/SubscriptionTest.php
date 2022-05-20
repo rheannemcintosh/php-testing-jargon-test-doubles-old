@@ -2,7 +2,6 @@
 
 namespace Tests;
 
-use App\Gateway;
 use App\Subscription;
 use App\User;
 use PHPUnit\Framework\TestCase;
@@ -18,7 +17,7 @@ class SubscriptionTest extends TestCase
     /** @test */
     function creating_a_subscription_marks_the_user_as_subscribed()
     {
-        $gateway = new Gateway();
+        $gateway = new FakeGateway();
 
         $subscription = new Subscription($gateway);
         $user = new User('John Doe');
